@@ -47,7 +47,7 @@ $site_config                 = DB::table('konfigurasi')->first();
         <section id="featured-services" class="featured-services">
           <div class="container" data-aos="fade-up">
             <div class="">
-              <h1 class="tittle mt-4">Program Studi S1 Ilmu Komputer</h1>
+              <h1 class="tittle mt-4">Program Studi <?php echo $site_config ->namaweb; ?></h1>
               <p class="garbar-periode"></p>
               <div class="d-flex">
               <span class="j-bold">J</span>

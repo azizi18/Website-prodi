@@ -17,7 +17,7 @@ class PengajarImport implements ToModel, WithHeadingRow
     {
         return new NamaPengajar_model([
             'nidn'     => $row['nidn'],
-            'nik_nip'     => $row['studi'],
+            'nik_nip'     => $row['nik_nip'],
             'nama'    => $row['nama'], 
         ]);
     }
