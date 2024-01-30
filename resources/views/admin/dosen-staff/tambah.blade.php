@@ -54,7 +54,7 @@
     <div class="row form-group">
         <label class="col-md-3 text-right">Upload gambar/Foto</label>
         <div class="col-md-9">
-            <input type="file" name="gambar" class="form-control" required="required" placeholder="Upload gambar">
+            <input type="file" name="gambar" class="form-control"  placeholder="Upload gambar">
         </div>
     </div>
 

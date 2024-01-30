@@ -50,7 +50,7 @@ $pengajar = DB::table('nama_pengajar')->get();
                         <div class="content-item hidden" data-aos="fade-up" data-aos-delay="50">
                             <div class="row justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
                                 <?php foreach($dosen_staff as $dosen_staff) { ?>
-                                <div class="col-md-3 card-kaprodi">
+                                <div class="col-md-10 card-kaprodi">
                                     <div class="card mx-auto" style="width: 12rem;">
                                         <div class="">
                                             @if ($dosen_staff->gambar)
