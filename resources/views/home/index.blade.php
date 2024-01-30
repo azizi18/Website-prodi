@@ -50,8 +50,7 @@ $site_config                 = DB::table('konfigurasi')->first();
               <h1 class="tittle mt-4">Program Studi <?php echo $site_config ->namaweb; ?></h1>
               <p class="garbar-periode"></p>
               <div class="d-flex">
-              <span class="j-bold">J</span>
-              <p class=" desc mt-4"><?php echo $site_config ->tentang; ?></p>
+              <p class="desc text-justify mt-4"><?php echo $site_config ->tentang; ?></p>
             </div>
             </div>
               <div class="container text-center">

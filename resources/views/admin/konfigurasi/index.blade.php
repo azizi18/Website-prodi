@@ -78,7 +78,7 @@
              
              <div class="form-group">
             <label>Tentang Ilkom</label>
-            <textarea name="tentang" rows="3" class="form-control" placeholder="Tentang ilkom"><?php echo $site->tentang; ?></textarea>
+            <textarea name="tentang" rows="3" id="editor" class="form-control" placeholder="Tentang ilkom"><?php echo $site->tentang; ?></textarea>
             </div>
 
             <h3>Gelombang Pendaftaran</h3><hr>
@@ -112,3 +112,9 @@
 
     </div>
 </form>
+<script>
+	CKEDITOR.replace( 'editor', {
+		filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+		filebrowserUploadMethod: 'form'
+	});
+	</script>	
