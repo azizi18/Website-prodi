@@ -228,7 +228,6 @@ public function status_berita($status_berita)
         }
         request()->validate([
             'judul_berita'  => 'required|unique:berita',
-
             'gambar'        => 'nullable|file|image|mimes:jpeg,png,jpg|max:8024',
 
         ]);
