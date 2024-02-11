@@ -89,7 +89,7 @@ h6 {
 
 }
 #hero .carousel-inner img {
- height: 50%;
+ height: 100%;
 
  
 }
@@ -103,8 +103,8 @@ h6 {
   position: relative;
 }
 .carousel-item img {
-  max-height: 665px; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
-  width: auto; 
+  max-height: 100%; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
+  max-width: auto; 
 }
 .carousel-item img {
   overflow: hidden;
