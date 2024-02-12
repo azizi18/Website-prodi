@@ -16,9 +16,7 @@ use App\Http\Controllers\Like;
 /* frontend profil */
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['guest']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
-    $prefix = config('lfm.url_prefix', 'laravel-filemanager');
-    $baseURL = config('lfm.base_url', 'public');
-    $uploadURL = config('lfm.upload_url', '/upload');
+   
 
 });
 
