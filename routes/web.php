@@ -20,6 +20,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['guest']], fun
     $baseURL = config('lfm.base_url', 'public');
     $uploadURL = config('lfm.upload_url', '/upload');
 
+
 });
 
 Route::get('/', 'App\Http\Controllers\Home@index');
@@ -37,9 +38,7 @@ Route::get('tenaga-pengajar', 'App\Http\Controllers\TenagaPengajar@index');
 /* frontend pengumuman */
 Route::get('pengumuman', 'App\Http\Controllers\Pengumuman@index');
 Route::get('pengumuman/read/{par1}', 'App\Http\Controllers\Pengumuman@read');
-Route::get('pengumuman/read-skripsi/{par1}', 'App\Http\Controllers\Pengumuman@read_skripsi');
 Route::get('pengumuman/unduh/{par1}', 'App\Http\Controllers\Pengumuman@unduh');
-Route::get('skripsi/unduh/{par1}', 'App\Http\Controllers\Pengumuman@unduh_skripsi');
 
 
 /* login */
