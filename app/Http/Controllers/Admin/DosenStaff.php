@@ -28,23 +28,6 @@ class DosenStaff extends Controller
         return view('admin/layout/wrapper', $data);
     }
 
-    // Main page
-    public function detail($id_staff)
-    {
-        if (Session()->get('username') == "") {
-            return redirect('login')->with(['warning' => 'Mohon maaf, Anda belum login']);
-        }
-        $mystaff        = new DosenStaff_model();
-        $staff          = $mystaff->detail($id_staff);
-
-        $data = array(
-            'title'             => $staff->nama_staff,
-            'staff'             => $staff,
-            'content'           => 'admin/dosen-staff/detail'
-        );
-        return view('admin/layout/wrapper', $data);
-    }
-
     // Cari
     public function cari(Request $request)
     {
@@ -167,10 +150,15 @@ class DosenStaff extends Controller
                 'id_user'               => Session()->get('id_user'),
                 'nama_staff'            => $request->nama_staff,
                 'slug_staff'            => $slug_staff,
-                'nik'                    => $request->nik,
+                'tempat_lahir'                    => $request->tempat_lahir,
+                'alamat'                    => $request->alamat,
+                'email'                    => $request->email,
+                'pendidikan_s1'                    => $request->pendidikan_s1,
+                'pendidikan_s2'                    => $request->pendidikan_s2,
+                'penelitian'                    => $request->penelitian,
+                'publikasi'                    => $request->publikasi,
                 'gambar'                => $input['nama_file'],
-                'status_staff'          => $request->status_staff,
-                'urutan'                => $request->urutan
+                'status_staff'          => $request->status_staff
             ]);
         } else {
             $slug_staff = Str::slug($request->nama_staff . '-' . $request->jabatan, '-');
@@ -178,9 +166,14 @@ class DosenStaff extends Controller
                 'id_user'               => Session()->get('id_user'),
                 'nama_staff'            => $request->nama_staff,
                 'slug_staff'            => $slug_staff,
-                'nik'                    => $request->nik,
-                'status_staff'          => $request->status_staff,
-                'urutan'                => $request->urutan
+                'tempat_lahir'                    => $request->tempat_lahir,
+                'alamat'                    => $request->alamat,
+                'email'                    => $request->email,
+                'pendidikan_s1'                    => $request->pendidikan_s1,
+                'pendidikan_s2'                    => $request->pendidikan_s2,
+                'penelitian'                    => $request->penelitian,
+                'publikasi'                    => $request->publikasi,
+                'status_staff'          => $request->status_staff
             ]);
         }
         
@@ -219,10 +212,15 @@ class DosenStaff extends Controller
                 'id_user'               => Session()->get('id_user'),
                 'nama_staff'            => $request->nama_staff,
                 'slug_staff'            => $slug_staff,
-                'nik'                    => $request->nik,
+                'tempat_lahir'                    => $request->tempat_lahir,
+                'alamat'                    => $request->alamat,
+                'email'                    => $request->email,
+                'pendidikan_s1'                    => $request->pendidikan_s1,
+                'pendidikan_s2'                    => $request->pendidikan_s2,
+                'penelitian'                    => $request->penelitian,
+                'publikasi'                    => $request->publikasi,
                 'gambar'                => $input['nama_file'],
-                'status_staff'          => $request->status_staff,
-                'urutan'                => $request->urutan
+                'status_staff'          => $request->status_staff
             ]);
         } else {
             $slug_staff = Str::slug($request->nama_staff . '-' . $request->jabatan, '-');
@@ -230,9 +228,14 @@ class DosenStaff extends Controller
                 'id_user'               => Session()->get('id_user'),
                 'nama_staff'            => $request->nama_staff,
                 'slug_staff'            => $slug_staff,
-                'nik'                    => $request->nik,                
-                'status_staff'          => $request->status_staff,
-                'urutan'                => $request->urutan
+                'tempat_lahir'                    => $request->tempat_lahir,
+                'alamat'                    => $request->alamat,
+                'email'                    => $request->email,
+                'pendidikan_s1'                    => $request->pendidikan_s1,
+                'pendidikan_s2'                    => $request->pendidikan_s2,
+                'penelitian'                    => $request->penelitian,
+                'publikasi'                    => $request->publikasi,             
+                'status_staff'          => $request->status_staff
             ]);
         }
         

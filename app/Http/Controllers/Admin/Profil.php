@@ -169,11 +169,11 @@ class Profil extends Controller
             $filenametostore = $filename.'_'.time().'.'.$extension;
       
             //Upload File
-            $request->file('upload')->storeAs('public/uploads', $filenametostore);
+            $request->file('upload')->move(public_path('upload'), $filenametostore);
  
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('storage/uploads/'.$filenametostore);
-            $msg = 'Image successfully uploaded';
+            $url = asset('upload/'.$filenametostore);
+            $msg = 'File Berhasil diupload';
             $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
              
             // Render HTML output

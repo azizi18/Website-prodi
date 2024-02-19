@@ -17,7 +17,7 @@
     {{ csrf_field() }}
 
     <div class="row form-group">
-        <label class="col-md-3 text-right">Status Tampil &amp; Nomor Urut tampil</label>
+        <label class="col-md-3 text-right">Status Tampil</label>
 
         <div class="col-md-3">
             <select name="status_staff" class="form-control">
@@ -26,16 +26,12 @@
             </select>
             <small>Tampilkan di website?</small>
         </div>
-        <div class="col-md-3">
-            <input type="number" name="urutan" class="form-control" placeholder="No urut tampil"
-                value="{{ old('urutan') }}">
-            <small class="text-success">Urutan</small>
-        </div>
+   
     </div>
 
 
     <div class="row form-group">
-        <label class="col-md-3 text-right">Nama staff <span class="text-danger">*</span></label>
+        <label class="col-md-3 text-right">Nama<span class="text-danger">*</span></label>
         <div class="col-md-9">
             <input type="text" name="nama_staff" class="form-control" placeholder="Nama staff"
                 value="{{ old('nama_staff') }}" required>
@@ -43,9 +39,45 @@
     </div>
 
     <div class="row form-group">
-        <label class="col-md-3 text-right">NIK/NIP</label>
+        <label class="col-md-3 text-right">Tempat tanggal lahir</label>
         <div class="col-md-9">
-            <input type="text" name="nik" class="form-control" placeholder="NIK/NIP" value="{{ old('nik') }}">
+            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Tanggal Lahir" value="{{ old('tempat_lahir') }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Alamat</label>
+        <div class="col-md-9">
+            <textarea  name="alamat" class="form-control" placeholder="alamat">{{ old('alamat') }}</textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Email</label>
+        <div class="col-md-9">
+            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Pendidikan S1</label>
+        <div class="col-md-9">
+            <input type="text" name="pendidikan_s1" class="form-control" placeholder="Pendidikan S1" value="{{ old('pendidikan_s1') }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Pendidikan S2</label>
+        <div class="col-md-9">
+            <input type="text" name="pendidikan_s2" class="form-control" placeholder="Pendidikan S2" value="{{ old('pendidikan_s2') }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Penelitian</label>
+        <div class="col-md-9">
+            <textarea  name="penelitian" class="form-control" placeholder="Penelitian">{{ old('penelitian') }}</textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Publikasi</label>
+        <div class="col-md-9">
+            <textarea  name="publikasi" class="form-control" placeholder="Publikasi">{{ old('publikasi') }}</textarea>
         </div>
     </div>
   

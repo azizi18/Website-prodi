@@ -89,7 +89,7 @@ h6 {
 
 }
 #hero .carousel-inner img {
- height: 50%;
+ height: 100%;
 
  
 }
@@ -103,8 +103,8 @@ h6 {
   position: relative;
 }
 .carousel-item img {
-  max-height: 665px; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
-  width: auto; 
+  max-height: 100%; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
+  max-width: auto; 
 }
 .carousel-item img {
   overflow: hidden;
@@ -242,57 +242,27 @@ width: 20%;
   color: #fff;
 }
 
-
-
-/*--------------------------------------------------------------
-# Frequently Asked Questions
---------------------------------------------------------------*/
-.faq {
-  padding: 20px 0;
-}
-
-.faq h1 {
-  font-size: 30px;
-  margin-left: 10px;
-  margin-top: 4px;
-}
 .faq .faq-list {
   padding: 0;
   list-style: none;
-  
-}
-.faq .garbar-tittle{
-  border-bottom: 1px solid #4075c0;
-width: 15%;
 
 }
 
 .faq .faq-list li {
-  border-bottom: 1px solid #7A7A7A;;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
 
-}
-.faq .faq-list p {
- color: #7A7A7A;
   margin-bottom: 20px;
   padding-bottom: 20px;
-    
 }
 
 .faq .faq-list .question {
   display: block;
   position: relative;
-  font-family: #106eea;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 24px;
-  font-weight: 600;
+  font-weight: 400;
   padding-left: 25px;
-  cursor: pointer;
-  color: #0d58ba;
+
   transition: 0.3s;
-  margin-top: 30px;
-  padding-left: 0;
 }
 
 .faq .faq-list i {
@@ -300,25 +270,12 @@ width: 15%;
   position: absolute;
   left: 0;
   top: -2px;
- 
+  color: #fcb900;
 }
 
 .faq .faq-list p {
   margin-bottom: 0;
   padding: 10px 0 0 25px;
-  padding-left: 0;
-}
-.faq .underline {
-  flex-grow: 1;
-  border-bottom: 2px solid black;
-  margin-left: 5px;
-  
-}
-.faq .garis-bawah {
-  flex-grow: 1;
-  border-bottom: 2px solid black;
-  margin-left: 5px;
-  
 }
 
 .faq .faq-list .icon-show {
@@ -327,10 +284,6 @@ width: 15%;
 
 .faq .faq-list .collapsed {
   color: black;
-}
-
-.faq .faq-list .collapsed:hover {
-  color: #003560;
 }
 
 .faq .faq-list .collapsed .icon-show {
@@ -342,6 +295,11 @@ width: 15%;
   display: none;
   transition: 0.6s;
 }
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+
 .icon-skripsi{
   width: 15%;
 }
@@ -429,6 +387,27 @@ width: 15%;
   font-weight: 900;
   color: #003560;
 }
+.btn-kalender {
+  margin-top: -90px;
+  background-color: #003560;
+  margin: 5px 0 auto;
+  display: inline-block;
+  border: 2px solid #003560;
+  height: 45px;
+  font-size: 12px;
+  padding: 12px 18px;
+  vertical-align: top;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.btn-kalender:hover {
+  background-color: #fff;
+  transition: 0.30s;
+}
+.btn-kalender:hover a {
+  color: #003560;
+}
+
 
 
 

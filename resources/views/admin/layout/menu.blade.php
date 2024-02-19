@@ -75,28 +75,6 @@
         </ul>
       </li><!-- End Components Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#skripsi-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-newspaper"></i><span>Skripsi</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="skripsi-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ asset('admin/skripsi') }}">
-              <i class="bi bi-circle"></i><span>Data Skripsi</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ asset('admin/skripsi/tambah') }}">
-              <i class="bi bi-circle"></i><span>Tambah Skripsi</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ asset('admin/kategori-skripsi') }}">
-              <i class="bi bi-circle"></i><span>Kategori Skripsi</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -122,35 +100,17 @@
       </li><!-- End Forms Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-staff" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person-vcard-fill"></i><span>Dosen Pengajar</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-person-vcard-fill"></i><span>Tenaga Pengajar</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-staff" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="{{ asset('admin/dosen-staff') }}">
-              <i class="bi bi-circle"></i><span>Dosen Pengajar</span>
+              <i class="bi bi-circle"></i><span>Tenaga Pengajar</span>
             </a>
           </li>
           <li>
             <a href="{{ asset('admin/dosen-staff/tambah') }}">
-              <i class="bi bi-circle"></i><span>Tambah Dosen Pengajar</span>
-            </a>
-          </li>
-          
-        </ul>
-      </li><!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-pengajar" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person-vcard-fill"></i><span>Nama Pengajar</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-pengajar" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ asset('admin/nama-pengajar') }}">
-              <i class="bi bi-circle"></i><span>Nama Pengajar</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ asset('admin/nama-pengajar/tambah') }}">
-              <i class="bi bi-circle"></i><span>Tambah Nama Pengajar</span>
+              <i class="bi bi-circle"></i><span>Tambah Tenaga Pengajar</span>
             </a>
           </li>
           

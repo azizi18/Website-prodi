@@ -77,43 +77,7 @@ class Pengumuman extends Controller
 
    
 
-    // kontak
-    public function read_skripsi($slug_skripsi)
-    {
-        Paginator::useBootstrap();
-        $site   = DB::table('konfigurasi')->first();
-      
-        // $berita = DB::table('berita')->where('status_berita','Publish')->orderBy('id_berita', 'DESC')->get();
-        $model  = new Skripsi_model();
-        $read_skripsi   = $model->read($slug_skripsi);
-        $read_related   = $model->related_post();
-        $related   = DB::table('skripsi')->inRandomOrder()->get();
-        if (!$read_skripsi) {
-            return redirect('skripsi');
-        }
-        $related_post   = DB::table('skripsi')->inRandomOrder()->take(3)->get();
-        if (!$read_related) {
-            return redirect('skripsi');
-        }
-        $shareButton_skripsi =\Share::page('http://127.0.0.1:8000/', 'id_skripsi')
-        ->facebook()
-        ->twitter()
-        ->pinterest();
 
-        $data = array(
-            'title'     => $read_skripsi->judul_skripsi,
-            'deskripsi' => $read_skripsi->judul_skripsi,
-            'keywords'  => $read_skripsi->judul_skripsi,
-            'site'      => $site,
-            'read_skripsi'      => $read_skripsi,
-            'related'  => $related,
-            'shareButton_skripsi'  => $shareButton_skripsi,
-            'related_post'  => $related_post,
-            
-            'content'   => 'pengumuman/read-skripsi'
-        );
-        return view('layout/wrapper', $data);
-    }
 
     // kontak
     public function read($slug_pengumuman)
@@ -182,18 +146,7 @@ class Pengumuman extends Controller
         return response()->download($pathToFile, $pengumuman->file);
     }
 
-     // Unduh
-     public function unduh_skripsi($id_skripsi)
-     {
-         $myskripsi = new Skripsi_model();
-         $skripsi  = $myskripsi->detail($id_skripsi);
-         $hits       = $skripsi->hits+1;
-         DB::table('skripsi')->where('id_pengumuman',$skripsi->id_skripsi)->update([
-             'hits'      => $hits
-         ]);
-         $pathToFile           = './assets/upload/file/'.$skripsi->file;
-         return response()->download($pathToFile, $skripsi->file);
-     }
+   
 
     
 }

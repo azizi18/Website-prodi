@@ -3,13 +3,8 @@
     <div class="col-md-6">
         <form action="{{ asset('admin/dosen-staff/cari') }}" method="get" accept-charset="utf-8">
             <br>
-            <div class="input-group">
-                <input type="text" name="keywords" class="form-control"
-                    placeholder="Ketik kata kunci pencarian staff...." value="<?php if (isset($_GET['keywords'])) {
-                        echo strip_tags($_GET['keywords']);
-                    } ?>" required>
+            <div class="input-group">  
                 <span class="input-group-btn btn-flat">
-                    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Cari</button>
                     <a href="{{ asset('admin/dosen-staff/tambah') }}" class="btn btn-success">
                         <i class="fa fa-plus"></i> Tambah Baru</a>
                 </span>
@@ -43,9 +38,11 @@
                         </div>
                     </th>
                     <th width="10%">GAMBAR</th>
-                    <th width="30%">NAMA</th>
+                    <th width="20%">NAMA</th>
+                    <th width="10%">ALAMAT</th>
+                    <th width="10%">PENELITIAN</th>
+                    <th width="10%">PUBLIKASI</th>
                     <th width="7%">TAMPIL</th>
-                    <th width="7%">NO URUT</th>
                     <th width="5%">Action</th>
                 </tr>
             </thead>
@@ -73,14 +70,26 @@
                         </td>
                     <td><?php echo $staff->nama_staff; ?>
                         <small>
-                            <br>NIK/NIP :<?php echo $staff->nik; ?>
+                            <br>Tempat Tanggal Lahir :<?php echo $staff->tempat_lahir; ?>
+                            <br>Email :<?php echo $staff->email; ?>
+                            <br>Pendidikan S1 :<?php echo $staff->pendidikan_s1; ?>
+                            <br>Pendidikan S2 :<?php echo $staff->pendidikan_s2; ?>
 
                         </small>
                     </td>
+                    <td><?php echo \Illuminate\Support\Str::limit(strip_tags($staff->alamat), 100, $end = '...');
+                        ?>
+                      </td>
+                      <td><?php echo \Illuminate\Support\Str::limit(strip_tags($staff->penelitian), 100, $end = '...');
+                        ?>
+                      </td>
+
+                      <td><?php echo \Illuminate\Support\Str::limit(strip_tags($staff->publikasi), 100, $end = '...');
+                        ?>
+                      </td>
                    
                     <td><a href="{{ asset('admin/dosen-staff/status_staff/' . $staff->status_staff) }}">
                             <?php echo $staff->status_staff; ?></a></td>
-                    <td><?php echo $staff->urutan; ?></td>
                     <td>
                         <div class="btn-group">
                             {{-- <a href="{{ asset('admin/staff/detail/' . $staff->id_staff) }}"

@@ -144,6 +144,10 @@ return [
 
     'thumb_img_height'         => 200, // px
 
+    'base_url' => 'public', // Sesuaikan dengan base URL yang sesuai
+    'url_prefix' => 'upload',
+    'upload_url' => '/upload', // Sesuaikan dengan URL yang sesuai
+
     /*
     |--------------------------------------------------------------------------
     | File Extension Information
@@ -164,6 +168,7 @@ return [
         'ppt'  => 'Microsoft PowerPoint',
         'pptx' => 'Microsoft PowerPoint',
     ],
+    
 
     /*
     |--------------------------------------------------------------------------

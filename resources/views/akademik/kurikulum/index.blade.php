@@ -5,12 +5,7 @@
             <h1 class="mt-5 tittle">Kurikulum</h1>
             <p class="garbar-tittle"></p>
             <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-md-4">
-                    <ul class="menu">
-                        <div class="menu-item active">Kurikulum 2020</div>
-                        
-                    </ul>
-                </div>
+           
                     <div id="content">
                         <div class="content-item" data-aos="fade-up" data-aos-delay="50">
                                 <table id="example" class="display" style="width:100%">

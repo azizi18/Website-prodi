@@ -62,15 +62,18 @@ $site_config                 = DB::table('konfigurasi')->first();
                               <p class="description"><?php echo $site_config ->periode_satu; ?></p>
                               <p class="description"><?php echo $site_config ->periode_dua; ?></p>
                               <p class="description"><?php echo $site_config ->periode_tiga; ?></p>
+
+                               <p class="title-jadwal mt-4">Kalender Akademik</p>
+                              <p class="btn-kalender"><a href="https://universitasbumigora.ac.id/kalender/kategori/kalender-akademik-ta-20232024">Kalender Akademik 2023/2024</a></p>
+                                     
                               <p class="garbar-feature mt-5"></p>
+
 
                           </div>
                           <div class="col-md-6">
                             <p class="garbar-feature"></p>
-                              <p class="title-jadwal">Jadwal Perkuliahan</p>
-                              <p class="btn-daftar"><a href="https://labkom.universitasbumigora.ac.id/#section_services">Jadwal Praktikum Labkom</a></p>
-                                      <p class="btn-daftar mt-4"><a href="https://pmb.universitasbumigora.ac.id/v.2019/#/">Jadwal Teori</a></p>
-                                      <p class="garbar-feature mt-4"></p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_5ccf9ldxwQ?si=Z8PfA68bq2TthqIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                             
 
                           </div>
                           
@@ -86,7 +89,7 @@ $site_config                 = DB::table('konfigurasi')->first();
    <section id="faq" class="faq">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-between">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="d-flex">
           <img src="assets/img/icons/pengumuman.svg" alt="pengumuman" class="icon-pengumuman"><span><h1 class="fw-bold">Pengumuman</h1></span></div>
           <p class="garbar-tittle mt-2"></p> 
@@ -109,7 +112,7 @@ $site_config                 = DB::table('konfigurasi')->first();
           </div>
         
         </div>
-          <div class="col-md-4 ">
+          <div class="col-md-6 ">
             <div class="d-flex">
             <img src="assets/img/icons/berita.svg" alt="berita" class="icon-berita"><span><h1 class="fw-bold">Berita Utama</h1></span></div>
             <p class="garbar-tittle"></p> 
@@ -132,25 +135,6 @@ $site_config                 = DB::table('konfigurasi')->first();
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="d-flex">
-              <img src="assets/img/icons/skripsi.png" alt="skripsi" class="icon-skripsi"><span><h1 class="fw-bold">Skripsi</h1></span></div>
-              <?php foreach($skripsi->take(3) as $skripsi) { ?>
-                <ul class="berita-list">
-      
-                  <li>
-                      <a href="{{ asset('pengumuman/read-skripsi/' . $skripsi->slug_skripsi) }}">
-                        <h4 class="fw-bold"><?php echo $skripsi->judul_skripsi; ?></h4>
-                    </a>
-                    <p class=""> <?php echo date('M d Y ', strtotime($skripsi->tanggal_publish)); ?></p>
-                    <h6><?php echo $skripsi->isi; ?></h6>
-                  </li>
-      
-                
-                  
-                </ul>
-                <?php } ?>
-          </div>
         </div>
       </div>
     </div>

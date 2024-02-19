@@ -29,7 +29,6 @@
         </th>
     <th width="40%">ISI</th>
     <th width="20%">KATEGORI</th>
-    <th width="10%">URUTAN</th>
     <th width="10%">ACTION</th>
 </tr>
 </thead>
@@ -51,9 +50,7 @@
     <td><?php echo $profil->nama_kategori_profil ?> 
      
     </td>
-    <td><?php echo $profil->urutan ?> 
-     
-    </td>
+   
     
     <td>
       <div class="btn-group">

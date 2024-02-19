@@ -43,11 +43,7 @@ if (isset($error)) {
             </select>
             <small>Tampilkan di website?</small>
         </div>
-        <div class="col-md-3">
-            <input type="number" name="urutan" class="form-control" placeholder="No urut tampil"
-                value="{{ $staff->urutan }}">
-            <small class="text-success">Urutan</small>
-        </div>
+    
     </div>
 
     <div class="row form-group">
@@ -59,12 +55,47 @@ if (isset($error)) {
     </div>
 
     <div class="row form-group">
-        <label class="col-md-3 text-right">NIK/NIP</label>
+        <label class="col-md-3 text-right">Tempat Tanggal Lahir</label>
         <div class="col-md-9">
-            <input type="text" name="nik" class="form-control" placeholder="NIK/NIP" value="{{ $staff->nik }}">
+            <input type="text" name="tempat_lahir" class="form-control" placeholder="Alamat" value="{{ $staff->tempat_lahir }}">
         </div>
     </div>
-
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Alamat</label>
+        <div class="col-md-9">
+            <textarea  name="alamat" class="form-control" placeholder="Alamat" >{{ $staff->alamat }}</textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Email</label>
+        <div class="col-md-9">
+            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ $staff->email }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Pendidikan S1</label>
+        <div class="col-md-9">
+            <input type="text" name="pendidikan_s1" class="form-control" placeholder="Pendidikan S1" value="{{ $staff->pendidikan_s1 }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Pendidkan S2</label>
+        <div class="col-md-9">
+            <input type="text" name="pendidikan_s2" class="form-control" placeholder="Pendidikan S2" value="{{ $staff->pendidikan_s1 }}">
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Penelitian</label>
+        <div class="col-md-9">
+            <textarea  name="penelitian" class="form-control" placeholder="Penelitian">{{ $staff->penelitian }}</textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-md-3 text-right">Publikasi</label>
+        <div class="col-md-9">
+            <textarea  name="publikasi" class="form-control" placeholder="Publikasi" >{{ $staff->publikasi }}</textarea>
+        </div>
+    </div>
 
     <div class="row form-group">
         <label class="col-md-3 text-right">Upload gambar/Foto</label>
