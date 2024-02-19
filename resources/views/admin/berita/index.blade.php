@@ -46,7 +46,7 @@
     {{ csrf_field() }}
 
     <div class="table-responsive mailbox-messages">
-        <table class="display table table-bordered" cellspacing="0" width="100%">
+        <table id="example1" class="display table table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr class="bg-dark">
                     <th width="5%">

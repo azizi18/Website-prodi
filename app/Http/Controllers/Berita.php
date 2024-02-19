@@ -72,29 +72,7 @@ class Berita extends Controller
         return view('layout/wrapper', $data);
     }
 
-   // kontak
-   public function pengumuman($slug_berita)
-   {
-       Paginator::useBootstrap();
-       $site   = DB::table('konfigurasi')->first();
-       $model  = new Berita_model();
-       $berita = $model->read($slug_berita);
-       $pengumuman = DB::table('berita')->where(array('jenis_berita' => 'pengumuman','status_berita' => 'Publish'))->orderBy('urutan', 'ASC')->get();
-       if(!$berita)
-       {
-           return redirect('berita');
-       }
 
-       $data = array(  'title'     => $berita->judul_berita,
-                       'deskripsi' => $berita->judul_berita,
-                       'keywords'  => $berita->judul_berita,
-                       'site'      => $site,
-                       'berita'    => $berita,
-                       'pengumuman'   => $pengumuman,
-                       'content'   => 'berita/pengumuman'
-                   );
-       return view('layout/wrapper',$data);
-   }
 
     // kontak
     public function read($slug_berita)

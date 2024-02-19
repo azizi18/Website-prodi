@@ -54,9 +54,9 @@ class Pengumuman extends Controller
     {
         Paginator::useBootstrap();
         $site       = DB::table('konfigurasi')->first();
-        $kategori   = DB::table('kategori')->where('slug_kategori', $slug_kategori)->first();
+        $kategori   = DB::table('kategori_pengumuman')->where('slug_kategori', $slug_kategori)->first();
         if (!$kategori) {
-            return redirect('berita');
+            return redirect('pengumuman');
         }
         $id_kategori = $kategori->id_kategori;
         $model      = new Pengumuman_model();

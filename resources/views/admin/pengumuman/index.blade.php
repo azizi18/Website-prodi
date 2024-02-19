@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="table-responsive mailbox-messages">
-        <table class="display table table-bordered" cellspacing="0" width="100%">
+        <table id="example1" class="display table table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr class="bg-dark">
                     <th width="5%">
@@ -73,7 +73,7 @@
                         <?php } ?>
                     <th width="10%">AUTHOR</th>
                     <th width="10%">STATUS</th>
-                    <th width="15%">ACTION</th>
+                    <th width="10%">ACTION</th>
                 </tr>
             </thead>
             <tbody>
