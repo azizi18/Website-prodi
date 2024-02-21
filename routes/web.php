@@ -63,9 +63,9 @@ Route::post('berita/comment_proses/{par1}', 'App\Http\Controllers\Comment@commen
 
 
 // berkas
-Route::get('berkas', 'App\Http\Controllers\Download@index');
-Route::get('berkas/unduh/{par1}', 'App\Http\Controllers\Download@unduh');
-Route::get('berkas/kategori/{par1}', 'App\Http\Controllers\Download@kategori');
+Route::get('berkas', 'App\Http\Controllers\Berkas@index');
+Route::get('berkas/unduh/{par1}', 'App\Http\Controllers\Berkas@unduh');
+Route::get('berkas/kategori/{par1}', 'App\Http\Controllers\Berkas@kategori');
 
 // Kalender
 Route::get('profil', 'App\Http\Controllers\Profil@index');
@@ -135,20 +135,6 @@ Route::post('admin/pengumuman/edit_proses', 'App\Http\Controllers\Admin\pengumum
 Route::post('admin/pengumuman/proses', 'App\Http\Controllers\Admin\pengumuman@proses');
 Route::get('admin/pengumuman/add', 'App\Http\Controllers\Admin\pengumuman@add');
 
-// Skripsi
-Route::get('admin/skripsi', 'App\Http\Controllers\Admin\Skripsi@index');
-Route::get('admin/skripsi/cari', 'App\Http\Controllers\Admin\Skripsi@cari');
-Route::get('admin/skripsi/status_skripsi/{par1}', 'App\Http\Controllers\Admin\Skripsi@status_skripsi');
-Route::get('admin/skripsi/kategori/{par1}', 'App\Http\Controllers\Admin\Skripsi@kategori');
-Route::get('admin/skripsi/jenis_skripsi/{par1}', 'App\Http\Controllers\Admin\Skripsi@jenis_skripsi');
-Route::get('admin/skripsi/author/{par1}', 'App\Http\Controllers\Admin\Skripsi@author');
-Route::get('admin/skripsi/tambah', 'App\Http\Controllers\Admin\Skripsi@tambah');
-Route::get('admin/skripsi/edit/{par1}', 'App\Http\Controllers\Admin\Skripsi@edit');
-Route::get('admin/skripsi/delete/{par1}', 'App\Http\Controllers\Admin\Skripsi@delete');
-Route::post('admin/skripsi/tambah_proses', 'App\Http\Controllers\Admin\Skripsi@tambah_proses');
-Route::post('admin/skripsi/edit_proses', 'App\Http\Controllers\Admin\Skripsi@edit_proses');
-Route::post('admin/skripsi/proses', 'App\Http\Controllers\Admin\Skripsi@proses');
-Route::get('admin/skripsi/add', 'App\Http\Controllers\Admin\Skripsi@add');
 
 // kategori Berita
 Route::get('admin/kategori', 'App\Http\Controllers\Admin\Kategori@index');
@@ -162,11 +148,7 @@ Route::post('admin/kategori-pengumuman/tambah', 'App\Http\Controllers\Admin\Kate
 Route::post('admin/kategori-pengumuman/edit', 'App\Http\Controllers\Admin\Kategori_pengumuman@edit');
 Route::get('admin/kategori-pengumuman/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_pengumuman@delete');
 
-// kategori Skripsi
-Route::get('admin/kategori-skripsi', 'App\Http\Controllers\Admin\Kategori_skripsi@index');
-Route::post('admin/kategori-skripsi/tambah', 'App\Http\Controllers\Admin\Kategori_skripsi@tambah');
-Route::post('admin/kategori-skripsi/edit', 'App\Http\Controllers\Admin\Kategori_skripsi@edit');
-Route::get('admin/kategori-skripsi/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_skripsi@delete');
+
 
 // status
 Route::get('admin/status_site', 'App\Http\Controllers\Admin\Status_site@index');
@@ -188,42 +170,6 @@ Route::post('admin/kategori_akademik/tambah', 'App\Http\Controllers\Admin\Katego
 Route::post('admin/kategori_akademik/edit', 'App\Http\Controllers\Admin\Kategori_akademik@edit');
 Route::get('admin/kategori_akademik/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_akademik@delete');
 
-
-// kategori_kemahasiswaan
-Route::get('admin/kategori_kemahasiswaan', 'App\Http\Controllers\Admin\Kategori_kemahasiswaan@index');
-Route::post('admin/kategori_kemahasiswaan/tambah', 'App\Http\Controllers\Admin\Kategori_kemahasiswaan@tambah');
-Route::post('admin/kategori_kemahasiswaan/edit', 'App\Http\Controllers\Admin\Kategori_kemahasiswaan@edit');
-Route::get('admin/kategori_kemahasiswaan/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_kemahasiswaan@delete');
-
-// kategori_visi misi
-Route::get('admin/kategori_vismis', 'App\Http\Controllers\Admin\Kategori_vismis@index');
-Route::post('admin/kategori_vismis/tambah', 'App\Http\Controllers\Admin\Kategori_vismis@tambah');
-Route::post('admin/kategori_vismis/edit', 'App\Http\Controllers\Admin\Kategori_vismis@edit');
-Route::get('admin/kategori_vismis/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_vismis@delete');
-
-// kategori_download
-Route::get('admin/kategori_download', 'App\Http\Controllers\Admin\Kategori_download@index');
-Route::post('admin/kategori_download/tambah', 'App\Http\Controllers\Admin\Kategori_download@tambah');
-Route::post('admin/kategori_download/edit', 'App\Http\Controllers\Admin\Kategori_download@edit');
-Route::get('admin/kategori_download/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_download@delete');
-// kategori_galeri
-Route::get('admin/kategori_galeri', 'App\Http\Controllers\Admin\Kategori_galeri@index');
-Route::post('admin/kategori_galeri/tambah', 'App\Http\Controllers\Admin\Kategori_galeri@tambah');
-Route::post('admin/kategori_galeri/edit', 'App\Http\Controllers\Admin\Kategori_galeri@edit');
-Route::get('admin/kategori_galeri/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_galeri@delete');
-
-
-
-// galeri
-Route::get('admin/galeri', 'App\Http\Controllers\Admin\Galeri@index');
-Route::get('admin/galeri/cari', 'App\Http\Controllers\Admin\Galeri@cari');
-Route::get('admin/galeri/status_galeri/{par1}', 'App\Http\Controllers\Admin\Galeri@status_galeri');
-Route::get('admin/galeri/tambah', 'App\Http\Controllers\Admin\Galeri@tambah');
-Route::get('admin/galeri/edit/{par1}', 'App\Http\Controllers\Admin\Galeri@edit');
-Route::get('admin/galeri/delete/{par1}', 'App\Http\Controllers\Admin\Galeri@delete');
-Route::post('admin/galeri/tambah_proses', 'App\Http\Controllers\Admin\Galeri@tambah_proses');
-Route::post('admin/galeri/edit_proses', 'App\Http\Controllers\Admin\Galeri@edit_proses');
-Route::post('admin/galeri/proses', 'App\Http\Controllers\Admin\Galeri@proses');
 
 
 
@@ -360,18 +306,18 @@ Route::post('admin/semester-delapan/edit_proses', 'App\Http\Controllers\Admin\Se
 Route::post('admin/semester-delapan/proses', 'App\Http\Controllers\Admin\SemesterDelapan@proses');
 Route::post('admin/semester-delapan/import', 'App\Http\Controllers\Admin\SemesterDelapan@import');
 
-// download
-Route::get('admin/download', 'App\Http\Controllers\Admin\Download@index');
-Route::get('admin/download/cari', 'App\Http\Controllers\Admin\Download@cari');
-Route::get('admin/download/status_download/{par1}', 'App\Http\Controllers\Admin\Download@status_download');
-Route::get('admin/download/kategori/{par1}', 'App\Http\Controllers\Admin\Download@kategori');
-Route::get('admin/download/tambah', 'App\Http\Controllers\Admin\Download@tambah');
-Route::get('admin/download/edit/{par1}', 'App\Http\Controllers\Admin\Download@edit');
-Route::get('admin/download/unduh/{par1}', 'App\Http\Controllers\Admin\Download@unduh');
-Route::get('admin/download/delete/{par1}', 'App\Http\Controllers\Admin\Download@delete');
-Route::post('admin/download/tambah_proses', 'App\Http\Controllers\Admin\Download@tambah_proses');
-Route::post('admin/download/edit_proses', 'App\Http\Controllers\Admin\Download@edit_proses');
-Route::post('admin/download/proses', 'App\Http\Controllers\Admin\Download@proses');
+// berkas
+Route::get('admin/berkas', 'App\Http\Controllers\Admin\Berkas@index');
+Route::get('admin/berkas/cari', 'App\Http\Controllers\Admin\Berkas@cari');
+Route::get('admin/berkas/tambah', 'App\Http\Controllers\Admin\Berkas@tambah');
+Route::get('admin/berkas/edit/{par1}', 'App\Http\Controllers\Admin\Berkas@edit');
+Route::get('admin/berkas/unduh/{par1}', 'App\Http\Controllers\Admin\Berkas@unduh');
+Route::get('admin/berkas/delete/{par1}', 'App\Http\Controllers\Admin\Berkas@delete');
+Route::post('admin/berkas/tambah_proses', 'App\Http\Controllers\Admin\Berkas@tambah_proses');
+Route::post('admin/berkas/edit_proses', 'App\Http\Controllers\Admin\Berkas@edit_proses');
+Route::post('admin/berkas/proses', 'App\Http\Controllers\Admin\Berkas@proses');
+Route::post('ckeditor/image_upload', 'App\Http\Controllers\Admin\Berkas@upload')->name('upload');
+
 
 // profil
 Route::get('admin/profil', 'App\Http\Controllers\Admin\Profil@index');

@@ -123,12 +123,12 @@
         </a>
         <ul id="forms-berkas" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ asset('admin/download') }}">
+            <a href="{{ asset('admin/berkas') }}">
               <i class="bi bi-circle"></i><span>Data Berkas</span>
             </a>
           </li>
           <li>
-            <a href="{{ asset('admin/download/tambah') }}">
+            <a href="{{ asset('admin/berkas/tambah') }}">
 
               <i class="bi bi-circle"></i><span>Tambah Berkas</span>
             </a>

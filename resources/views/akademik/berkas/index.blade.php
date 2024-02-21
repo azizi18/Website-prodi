@@ -4,12 +4,11 @@
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <h1 class="tittle text-center mt-5">BERKAS</h1>
            <div class="row mt-5">
-               <?php $i=1; foreach($download as $download) { ?>
-          <div class="isi">
-                <p><?php echo $download->urutan ?>.<?php echo $download->nama_download ?></p>
-                <div class="btn-berkas -mt-4">
-                    <p class="btn-download"><a href="{{ asset('berkas/unduh/'.$download->id_download) }}"> <span><?php echo $download->judul_download ?></span></a></p>
-                  </div>
+               <?php $i=1; foreach($berkas as $berkas) { ?>
+          <div class="isi-berkas">
+                <p><?php echo $berkas->judul_link ?></p>
+                <p><?php echo $berkas->isi ?></p>
+              
                 </div>
                 <?php $i++; } ?>
         </div>

@@ -18,7 +18,7 @@ class Profil extends Controller
 		$profil 			= $myprofil->semua();
 		$kategori_profil	= DB::table('kategori_profil')->orderBy('urutan','ASC')->get();
 
-		$data = array(  'title'				=> 'Data Profil Ilmu Komputer',
+		$data = array(  'title'				=> 'Data Profil Prodi',
 						'profil'			=> $profil,
 						'kategori_profil'	=> $kategori_profil,
                         'content'			=> 'admin/profil/index'
@@ -35,7 +35,7 @@ class Profil extends Controller
 		$profil 			= $myprofil->cari($keywords);
 		$kategori_profil	= DB::table('kategori_profil')->orderBy('urutan','ASC')->get();
 
-		$data = array(  'title'				=> 'Data Profil Ilmu Komputer',
+		$data = array(  'title'				=> 'Data Profil Prodi',
 						'profil'			=> $profil,
 						'kategori_profil'	=> $kategori_profil,
                         'content'			=> 'admin/profil/index'
@@ -77,7 +77,7 @@ class Profil extends Controller
         $profil            = $myprofil->all_kategori_download($id_kategori_profil);
         $kategori_profil    = DB::table('kategori_download')->orderBy('urutan','ASC')->get();
 
-        $data = array(  'title'             => 'Data Profil Ilmu Komputer',
+        $data = array(  'title'             => 'Data Profil Prodi',
                         'profil'            => $profil,
                         'kategori_profil'   => $kategori_profil,
                         'content'           => 'admin/profil/index'
