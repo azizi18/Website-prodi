@@ -10,16 +10,9 @@
                     <h3 class="fw-bold"><i class="bi bi-file-earmark-text-fill icon-camera"> </i><?php echo $read->judul_pengumuman; ?> </h4>
                
             </div>
-            <div id="content">
-                <embed src="{{ asset('assets/upload/file/'.$read->file) }}" type="application/pdf" width="100%" height="600px" />
-                <div class="btn-berkas -mt-4">
-                    <p><?php echo $read->judul_pengumuman; ?></p>
-                <p class="btn-download"><a href="{{ asset('pengumuman/unduh/'.$read->id_pengumuman) }}"> <span>Download</span></a></p>
-              </div>
-       
-            </div>
+      <div class="isi-berkas">
             <h6><?php echo $read->isi; ?></h6>
-       
+        </div>
         <div class="row mt-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="share d-flex justify-content-end gap-4">
                 

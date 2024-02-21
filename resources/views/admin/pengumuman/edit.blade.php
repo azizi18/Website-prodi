@@ -64,15 +64,6 @@
     <input type="hidden" name="jenis_pengumuman" value="pengumuman">
     <?php } ?>
    
-    <div class="row form-group">
-        <label class="col-md-3 text-right">Upload File</label>
-        <div class="col-md-9">
-            <input type="file" name="file" class="form-control" placeholder="Upload File">
-            <small>File saat ini:
-                <br>	{{ old('file', $pengumuman->file) }}
-            </small>
-        </div>
-    </div>
 
     <div class="row form-group">
         <label class="col-md-3 text-right">Isi pengumuman</label>

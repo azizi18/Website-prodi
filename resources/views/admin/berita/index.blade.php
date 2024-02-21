@@ -57,7 +57,7 @@
                             </button>
                         </div>
                     </th>
-                    <th width="15%">GAMBAR</th>
+                    <th width="15%">ISI</th>
                     <th width="25%">JUDUL</th>
                     <?php if(Request::segment(3)=="jenis_berita") { ?>
                     <?php }else{ ?>
@@ -81,14 +81,9 @@
                             <label for="check<?php echo $i; ?>"></label>
                         </div>
                     </td>
-                    <td>
-                    @if ($berita->gambar)
-                        <img src="{{ asset('assets/upload/image/thumbs/' . $berita->gambar) }}"
-                        class="img img-thumbnail img-fluid">
-                    @else
-                    <img id="thumbnail" src="{{ asset('assets/img/thumbnail.png') }}"  alt=""  class="img img-thumbnail img-fluid">
-
-                    @endif</td>
+                    <td><?php echo \Illuminate\Support\Str::limit(strip_tags($berita->isi), 200, $end = '...');
+                        ?>
+                      </td>
                     <td>
                         <a href="{{ asset('admin/berita/edit/' . $berita->id_berita) }}">
                             <?php echo $berita->judul_berita; ?> <sup><i class="fa fa-pencil"></i></sup>

@@ -11,11 +11,7 @@
                     <h3 class="fw-bold"><i class="bi bi-camera-fill icon-camera"> </i><?php echo $read->judul_berita; ?> </h4>
                
             </div>
-            @if ($read->gambar)
-              <img id="thumbnail" src="{{ asset('assets/upload/image/thumbs/' . $read->gambar) }}" class="img-fluid" alt="">
-              @else
-                
-              @endif
+       
             <h6><?php echo $read->isi; ?></h6>
        
         <div class="row mt-4" data-aos="fade-up" data-aos-delay="100">

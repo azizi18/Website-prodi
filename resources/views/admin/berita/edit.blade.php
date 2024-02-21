@@ -62,18 +62,6 @@
     <input type="hidden" name="jenis_berita" value="Berita">
     <?php } ?>
 
-    <div class="row form-group">
-        <label class="col-md-3 text-right">Upload gambar/Foto</label>
-        <div class="col-md-9">
-            <input type="file" name="gambar" class="form-control" placeholder="Upload gambar">
-            <small>Gambar saat ini:
-                <br><?php if($berita->gambar!="") { ?>
-                <img src="{{ asset('assets/upload/image/thumbs/' . $berita->gambar) }}" class="img img-thumbnail"
-                    width="80">
-                <?php } ?>
-            </small>
-        </div>
-    </div>
    
     <div class="row form-group">
         <label class="col-md-3 text-right">Isi berita</label>

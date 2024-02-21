@@ -65,7 +65,7 @@
                             </button>
                         </div>
                     </th>
-                    <th width="15%">GAMBAR</th>
+                    <th width="15%">ISI</th>
                     <th width="25%">JUDUL</th>
                     <?php if(Request::segment(3)=="jenis_pengumuman") { ?>
                         <?php }else{ ?>
@@ -88,9 +88,9 @@
                             <label for="check<?php echo $i; ?>"></label>
                         </div>
                     </td>
-                    <td>
-                        <?php echo $pengumuman->file ?> 
-                    </td>
+                    <td><?php echo \Illuminate\Support\Str::limit(strip_tags($pengumuman->isi), 200, $end = '...');
+                        ?>
+                      </td>
                     
                     
                     <td>

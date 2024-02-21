@@ -228,40 +228,15 @@ public function status_berita($status_berita)
         }
         request()->validate([
             'judul_berita'  => 'required|unique:berita',
-            'gambar'        => 'nullable|file|image|mimes:jpeg,png,jpg|max:8024',
 
         ]);
 
-        if ($request->hasFile('gambar')) {
-
-         foreach ($request->file('gambar') as $image) {
-
-         $filenamewithextension  = $image->getClientOriginalName();
-         $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-         $input['nama_file']     = Str::slug($filename, '-') . '-' . time() . '.' . $image->getClientOriginalExtension();
-         $destinationPath        = './assets/upload/image/thumbs/';
-         $img = Image::make($image->getRealPath(), array(
-             'width'     => 150,
-             'height'    => 150,
-             'grayscale' => false
-         ));
-         $img->save($destinationPath . '/' . $input['nama_file']);
-         $destinationPath = './assets/upload/image/';
-         $image->move($destinationPath, $input['nama_file']);
-
-        
-        }  
-       
-    } else{
-        $input['nama_file'] = null;
-    }
      $slug_berita = Str::slug($request->judul_berita, '-');
          DB::table('berita')->insert([
              'id_kategori'       => $request->id_kategori,
              'id_user'           => Session()->get('id_user'),
              'slug_berita'       => $slug_berita,
              'judul_berita'      => $request->judul_berita,
-             'gambar'            => $input['nama_file'],
              'isi'               => $request->isi,
              'jenis_berita'      => $request->jenis_berita,
              'status_berita'      => $request->status_berita,
@@ -288,38 +263,14 @@ public function status_berita($status_berita)
             'gambar'        => 'nullable|file|image|mimes:jpeg,png,jpg|max:8024',
 
         ]);
-        if ($request->hasFile('gambar')) {
-            foreach ($request->file('gambar') as $image) {
-
-                $filenamewithextension  = $image->getClientOriginalName();
-                $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-                $input['nama_file']     = Str::slug($filename, '-') . '-' . time() . '.' . $image->getClientOriginalExtension();
-                $destinationPath        = './assets/upload/image/thumbs/';
-                $img = Image::make($image->getRealPath(), array(
-                    'width'     => 150,
-                    'height'    => 150,
-                    'grayscale' => false
-                ));
-                $img->save($destinationPath . '/' . $input['nama_file']);
-                $destinationPath = './assets/upload/image/';
-                $image->move($destinationPath, $input['nama_file']);
-       
-               
-               }  
-       
-        } else{
-            $input['nama_file'] = null;
-        }
-
-            
         
+            
             $slug_berita = Str::slug($request->judul_berita, '-');
             DB::table('berita')->where('id_berita', $request->id_berita)->update([
                 'id_kategori'       => $request->id_kategori,
                 'id_user'           => Session()->get('id_user'),
                 'slug_berita'       => $slug_berita,
                 'judul_berita'      => $request->judul_berita,
-                'gambar'                => $input['nama_file'],
                 'isi'               => $request->isi,
                 'jenis_berita'      => $request->jenis_berita,
                 'status_berita'     => $request->status_berita,
@@ -333,7 +284,34 @@ public function status_berita($status_berita)
             return redirect('admin/berita/jenis_berita/' . $request->jenis_berita)->with(['sukses' => 'Data telah diupdate']);
         }
     }
-
+    public function upload(Request $request)
+    {
+        if($request->hasFile('upload')) {
+            //get filename with extension
+            $filenamewithextension = $request->file('upload')->getClientOriginalName();
+      
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+      
+            //get file extension
+            $extension = $request->file('upload')->getClientOriginalExtension();
+      
+            //filename to store
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+      
+            //Upload File
+            $request->file('upload')->move(public_path('upload'), $filenametostore);
+ 
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('upload/'.$filenametostore);
+            $msg = 'File Berhasil diupload';
+            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+             
+            // Render HTML output
+            @header('Content-type: text/html; charset=utf-8');
+            echo $re;
+        }
+    }
     
 
     // Delete

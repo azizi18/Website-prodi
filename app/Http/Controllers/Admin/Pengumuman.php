@@ -231,21 +231,10 @@ class Pengumuman extends Controller
         }
         request()->validate([
             'judul_pengumuman'  => 'required|unique:pengumuman',
-            'file' => 'nullable|file|mimes:pdf,doc,docx|max:8024',
 
             
         ]);
-        if ($request->hasFile('file')) {
-            $image                  = $request->file('file');
-        $filenamewithextension  = $request->file('file')->getClientOriginalName();
-        $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-        $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = './assets/upload/file/';
-        $image->move($destinationPath, $input['nama_file']);
-       
-        } else{
-            $input['nama_file'] = null;
-        }
+        
        
             $slug_pengumuman = Str::slug($request->judul_pengumuman, '-');
             DB::table('pengumuman')->insert([
@@ -253,7 +242,6 @@ class Pengumuman extends Controller
                 'id_user'           => Session()->get('id_user'),
                 'slug_pengumuman'       => $slug_pengumuman,
                 'judul_pengumuman'      => $request->judul_pengumuman,
-                'file'            => $input['nama_file'],
                 'isi'               => $request->isi,
                 'jenis_pengumuman'      => $request->jenis_pengumuman,
                 'status_pengumuman'      => $request->status_pengumuman,
@@ -281,24 +269,13 @@ class Pengumuman extends Controller
             'file' => 'nullable|file|mimes:pdf,doc,docx|max:8024',
 
         ]);
-        if ($request->hasFile('file')) {
-         $image                  = $request->file('file');
-        $filenamewithextension  = $request->file('file')->getClientOriginalName();
-        $filename               = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-        $input['nama_file']     = Str::slug($filename, '-').'-'.time().'.'.$image->getClientOriginalExtension();
-        $destinationPath = './assets/upload/file/';
-        $image->move($destinationPath, $input['nama_file']);
-       
-        } else{
-            $input['nama_file'] = null;
-        }
+      
             $slug_pengumuman = Str::slug($request->judul_pengumuman, '-');
             DB::table('pengumuman')->where('id_pengumuman', $request->id_pengumuman)->update([
                 'id_kategori'       => $request->id_kategori,
                 'id_user'           => Session()->get('id_user'),
                 'slug_pengumuman'       => $slug_pengumuman,
                 'judul_pengumuman'      => $request->judul_pengumuman,
-                'file'            => $input['nama_file'],
                 'isi'               => $request->isi,
                 'jenis_pengumuman'      => $request->jenis_pengumuman,
                 'status_pengumuman'      => $request->status_pengumuman,
@@ -312,6 +289,35 @@ class Pengumuman extends Controller
             return redirect('admin/pengumuman/jenis_pengumuman/' . $request->jenis_pengumuman)->with(['sukses' => 'Data telah diupdate']);
         }
         
+    }
+
+    public function upload(Request $request)
+    {
+        if($request->hasFile('upload')) {
+            //get filename with extension
+            $filenamewithextension = $request->file('upload')->getClientOriginalName();
+      
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+      
+            //get file extension
+            $extension = $request->file('upload')->getClientOriginalExtension();
+      
+            //filename to store
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+      
+            //Upload File
+            $request->file('upload')->move(public_path('upload'), $filenametostore);
+ 
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('upload/'.$filenametostore);
+            $msg = 'File Berhasil diupload';
+            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+             
+            // Render HTML output
+            @header('Content-type: text/html; charset=utf-8');
+            echo $re;
+        }
     }
 
    // Delete

@@ -116,6 +116,8 @@ Route::post('admin/berita/tambah_proses', 'App\Http\Controllers\Admin\Berita@tam
 Route::post('admin/berita/edit_proses', 'App\Http\Controllers\Admin\Berita@edit_proses');
 Route::post('admin/berita/proses', 'App\Http\Controllers\Admin\Berita@proses');
 Route::get('admin/berita/add', 'App\Http\Controllers\Admin\Berita@add');
+Route::post('ckeditor/image_upload', 'App\Http\Controllers\Admin\Berita@upload')->name('upload');
+
 
 
 
@@ -134,6 +136,8 @@ Route::post('admin/pengumuman/tambah_proses', 'App\Http\Controllers\Admin\pengum
 Route::post('admin/pengumuman/edit_proses', 'App\Http\Controllers\Admin\pengumuman@edit_proses');
 Route::post('admin/pengumuman/proses', 'App\Http\Controllers\Admin\pengumuman@proses');
 Route::get('admin/pengumuman/add', 'App\Http\Controllers\Admin\pengumuman@add');
+Route::post('ckeditor/image_upload', 'App\Http\Controllers\Admin\pengumuman@upload')->name('upload');
+
 
 
 // kategori Berita

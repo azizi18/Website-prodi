@@ -62,12 +62,7 @@
     <input type="hidden" name="jenis_berita" value="Berita">
     <?php } ?>
 
-    <div class="row form-group">
-        <label class="col-md-3 text-right">Upload gambar</label>
-        <div class="col-md-9">
-            <input type="file" name="gambar[]" class="form-control"  placeholder="Upload gambar"  id="gambar" multiple accept="gambar/*">
-        </div>
-    </div>
+ 
 
     <div class="row form-group">
         <label class="col-md-3 text-right">Isi</label>

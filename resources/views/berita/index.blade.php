@@ -9,13 +9,10 @@
                 <?php if($berita->status_berita=="Publish") { ?>
                     <div class="col-md-4">
             <div class="card" style="width: 22rem;">
-              @if ($berita->gambar)
-              <img id="thumbnail" src="{{ asset('assets/upload/image/thumbs/' . $berita->gambar) }}" class="card-img-top" alt="">
-
-              @else
+           
               <img id="thumbnail" src="{{ asset('assets/img/thumbnail.png') }}"  alt="">
 
-              @endif
+            
                 <div class="card-body">
                   <h5 class="card-title fw-bold"><?php echo $berita->judul_berita; ?></h5>
                   <p class="card-text"><?php echo \Illuminate\Support\Str::limit(strip_tags($berita->isi), 100, $end = ''); ?></p>
