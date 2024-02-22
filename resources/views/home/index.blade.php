@@ -19,7 +19,7 @@ $site_config                 = DB::table('konfigurasi')->first();
         <div class="carousel-inner">
           <?php foreach($slider as $index => $slider) { ?>
           <div class="carousel-item {{$index == '0' ? 'active':''}}">
-            <img src="{{ asset('assets/upload/image/'.$slider->gambar) }}" class="d-block w-100" alt="">     
+            <img src="{{ asset('assets/upload/image/'.$slider->gambar) }}" class="" alt="">     
     
             <div class="carousel-caption">
                 <?php if($slider->status_text=="Ya") { ?>
@@ -72,7 +72,7 @@ $site_config                 = DB::table('konfigurasi')->first();
                           </div>
                           <div class="col-md-6">
                             <p class="garbar-feature"></p>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/_5ccf9ldxwQ?si=Z8PfA68bq2TthqIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_5ccf9ldxwQ?si=Z8PfA68bq2TthqIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                              
 
                           </div>

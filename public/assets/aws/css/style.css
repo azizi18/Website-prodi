@@ -84,34 +84,40 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
-  
+ position: relative;
 
 }
-#hero .carousel-inner img {
- height: 100%;
 
- 
-}
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
   }
 }
 
-#hero .container {
-  position: relative;
+
+section#hero img {
+	width: 100%;
+	height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.carousel-item img {
-  max-height: 100%; /* Sesuaikan dengan tinggi maksimal yang diinginkan */
-  max-width: auto; 
-}
+
+
+
 .carousel-item img {
   overflow: hidden;
 }
 
 
-
+@media only screen and (max-width: 500px) {
+  section#home img {
+    width: 100%;
+    height: 350px;
+    margin-top: 70px;
+    /* Mengatur ukuran gambar menjadi 80% lebar pada tampilan mobile */
+  }
+}
 
 /*--------------------------------------------------------------
 # Sections General
