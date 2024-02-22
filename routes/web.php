@@ -123,20 +123,20 @@ Route::post('ckeditor/image_upload', 'App\Http\Controllers\Admin\Berita@upload')
 
 
 // pengumuman
-Route::get('admin/pengumuman', 'App\Http\Controllers\Admin\pengumuman@index');
-Route::get('admin/pengumuman/cari', 'App\Http\Controllers\Admin\pengumuman@cari');
-Route::get('admin/pengumuman/status_pengumuman/{par1}', 'App\Http\Controllers\Admin\pengumuman@status_pengumuman');
-Route::get('admin/pengumuman/kategori/{par1}', 'App\Http\Controllers\Admin\pengumuman@kategori');
-Route::get('admin/pengumuman/jenis_pengumuman/{par1}', 'App\Http\Controllers\Admin\pengumuman@jenis_pengumuman');
-Route::get('admin/pengumuman/author/{par1}', 'App\Http\Controllers\Admin\pengumuman@author');
-Route::get('admin/pengumuman/tambah', 'App\Http\Controllers\Admin\pengumuman@tambah');
-Route::get('admin/pengumuman/edit/{par1}', 'App\Http\Controllers\Admin\pengumuman@edit');
-Route::get('admin/pengumuman/delete/{par1}', 'App\Http\Controllers\Admin\pengumuman@delete');
-Route::post('admin/pengumuman/tambah_proses', 'App\Http\Controllers\Admin\pengumuman@tambah_proses');
-Route::post('admin/pengumuman/edit_proses', 'App\Http\Controllers\Admin\pengumuman@edit_proses');
-Route::post('admin/pengumuman/proses', 'App\Http\Controllers\Admin\pengumuman@proses');
-Route::get('admin/pengumuman/add', 'App\Http\Controllers\Admin\pengumuman@add');
-Route::post('ckeditor/image_upload', 'App\Http\Controllers\Admin\pengumuman@upload')->name('upload');
+Route::get('admin/pengumuman', 'App\Http\Controllers\Admin\Pengumuman@index');
+Route::get('admin/pengumuman/cari', 'App\Http\Controllers\Admin\Pengumuman@cari');
+Route::get('admin/pengumuman/status_pengumuman/{par1}', 'App\Http\Controllers\Admin\Pengumuman@status_pengumuman');
+Route::get('admin/pengumuman/kategori/{par1}', 'App\Http\Controllers\Admin\Pengumuman@kategori');
+Route::get('admin/pengumuman/jenis_pengumuman/{par1}', 'App\Http\Controllers\Admin\Pengumuman@jenis_pengumuman');
+Route::get('admin/pengumuman/author/{par1}', 'App\Http\Controllers\Admin\Pengumuman@author');
+Route::get('admin/pengumuman/tambah', 'App\Http\Controllers\Admin\Pengumuman@tambah');
+Route::get('admin/pengumuman/edit/{par1}', 'App\Http\Controllers\Admin\Pengumuman@edit');
+Route::get('admin/pengumuman/delete/{par1}', 'App\Http\Controllers\Admin\Pengumuman@delete');
+Route::post('admin/pengumuman/tambah_proses', 'App\Http\Controllers\Admin\Pengumuman@tambah_proses');
+Route::post('admin/pengumuman/edit_proses', 'App\Http\Controllers\Admin\Pengumuman@edit_proses');
+Route::post('admin/pengumuman/proses', 'App\Http\Controllers\Admin\Pengumuman@proses');
+Route::get('admin/pengumuman/add', 'App\Http\Controllers\Admin\Pengumuman@add');
+Route::post('ckeditor/image_upload', 'App\Http\Controllers\Admin\Pengumuman@upload')->name('upload');
 
 
 
@@ -175,7 +175,16 @@ Route::post('admin/kategori_akademik/edit', 'App\Http\Controllers\Admin\Kategori
 Route::get('admin/kategori_akademik/delete/{par1}', 'App\Http\Controllers\Admin\Kategori_akademik@delete');
 
 
-
+// galeri
+Route::get('admin/galeri', 'App\Http\Controllers\Admin\Galeri@index');
+Route::get('admin/galeri/cari', 'App\Http\Controllers\Admin\Galeri@cari');
+Route::get('admin/galeri/status_galeri/{par1}', 'App\Http\Controllers\Admin\Galeri@status_galeri');
+Route::get('admin/galeri/tambah', 'App\Http\Controllers\Admin\Galeri@tambah');
+Route::get('admin/galeri/edit/{par1}', 'App\Http\Controllers\Admin\Galeri@edit');
+Route::get('admin/galeri/delete/{par1}', 'App\Http\Controllers\Admin\Galeri@delete');
+Route::post('admin/galeri/tambah_proses', 'App\Http\Controllers\Admin\Galeri@tambah_proses');
+Route::post('admin/galeri/edit_proses', 'App\Http\Controllers\Admin\Galeri@edit_proses');
+Route::post('admin/galeri/proses', 'App\Http\Controllers\Admin\Galeri@proses');
 
 //   Dosen staff
 Route::get('admin/dosen-staff', 'App\Http\Controllers\Admin\DosenStaff@index');

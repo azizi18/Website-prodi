@@ -36,48 +36,25 @@
         </div>
         <!-- /.info-box -->
     </div>
-    {{-- <!-- /.col -->
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
-            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-book"></i></span>
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-calendar"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">
-                    Struktur
-                </span>
+                <span class="info-box-text">Pengumuman</span>
                 <span class="info-box-number">
                     <?php
-                    $berita = DB::table('berita')
-                        ->where('jenis_berita', 'Layanan')
-                        ->get();
-                    echo $berita->count();
+                    $agenda = DB::table('pengumuman')->get();
+                    echo $agenda->count();
                     ?>
-                    <small></small>
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div> --}}
-    <!-- /.col -->
-    <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-            <span class="info-box-icon bg-danger elevation-1"><i class="bi bi-newspaper"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Skripsi</span>
-                <span class="info-box-number">
-                    <?php
-                    $skripsi = DB::table('skripsi')->get();
-                    echo $skripsi->count();
-                    ?>
-                    <small>Skripsi</small>
+                    <small>Pengumuman</small>
                 </span>
             </div>
             <!-- /.info-box-content -->
         </div>
         <!-- /.info-box -->
     </div>
+   
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3">
             <span class="info-box-icon bg-success elevation-1"><i class="bi bi-person-vcard-fill"></i></span>
@@ -86,7 +63,7 @@
                 <span class="info-box-text">Dosen Pengajar</span>
                 <span class="info-box-number">
                     <?php
-                    $dosen = DB::table('nama_pengajar')->get();
+                    $dosen = DB::table('dosen_staff')->get();
                     echo $dosen->count();
                     ?>
                     <small>Dosen Pengajar</small>
@@ -152,24 +129,7 @@
 
    
     <!-- /.col -->
-    <div class="col-12 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-calendar"></i></span>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Pengumuman</span>
-                <span class="info-box-number">
-                    <?php
-                    $agenda = DB::table('pengumuman')->get();
-                    echo $agenda->count();
-                    ?>
-                    <small>Pengumuman</small>
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
    
     <!-- /.col -->
 </div>

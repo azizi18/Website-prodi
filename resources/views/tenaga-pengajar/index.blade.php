@@ -34,6 +34,9 @@ $dosen_staff = DB::table('dosen_staff')->get();
                         <div class="fw-bold" style="background-color: #b5e0e2">Nama
                         </div>
                         <p>{{ $dosen_staff->nama_staff }}</p>
+                        <div class="fw-bold" style="background-color: #b5e0e2">Email
+                        </div>
+                        <p>{{ $dosen_staff->email }}</p>
                         <div class="fw-bold" style="background-color: #b5e0e2">Tempat Tanggal Lahir
                         </div>
                         <p>{{ $dosen_staff->tempat_lahir }}</p>
